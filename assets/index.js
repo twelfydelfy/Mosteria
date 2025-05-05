@@ -1,5 +1,6 @@
 let currentSlide = 1;
 let currentSection = 0;
+let languageVariable = 1;
 const left = document.querySelector('.left-selector')
 const right = document.querySelector('.right-selector')
 const middle = document.querySelector('.middle-selector')
@@ -8,6 +9,16 @@ let leftState = false;
 let rightState = false;
 let middleState = false;  
 let intervalul;
+
+import { aperitive } from "./date";
+import { supe } from "./date";
+import { suplemente } from "./date";
+import { pizza } from "./date";
+import { burger } from "./date";
+import { desert } from "./date";
+import { carne } from "./date";
+import { bauturi } from "./date";
+import { alcool } from "./date";
 
 function changeSlide() {
     slider.style.transition = 'all 0.4s ease-in';
