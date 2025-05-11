@@ -1,0 +1,98 @@
+.menu{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 5%;
+}
+.despre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px 50px;
+    align-items: center;
+}
+.despreimg{
+    height: 277px;
+    width: 721px;
+}
+.despretxt{
+    max-width: 40%;
+    font-size: 20px;
+    
+}
+.section1header{
+    margin-top: 20px;
+    width: 90%;
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #F1F1F1;
+}
+.categorii{
+    width: 46%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.categorii a{
+    font-size: 24px;
+}
+.c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10{
+    padding-left: 30px;
+}
+.menuc1, .menuc2, .menuc3, .menuc4, .menuc5, .menuc6, .menuc7, .menuc8, .menuc9, .menu10{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    justify-items: center;
+    row-gap: 20px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 250px;
+}
+.upperdeck{
+    position: relative;
+}
+.imagebox{
+    height: 250px;
+    width: 250px;
+}
+.pricebox{
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    background-color: #D9D9D9;
+    border-radius: 14.25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+    padding: 5px 5px;
+}
+.productName{
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+}
+.productDescription{
+    font-size: 14px;
+    padding: 5px 10px;
+    text-align: center;
+    margin: 0;
+}
+.quantity{
+    font-size: 13px;
+    color: #6F6F6F;
+    margin: 0;
+    font-weight: 500;
+}
+.price{
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+}

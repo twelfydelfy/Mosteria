@@ -1,0 +1,46 @@
+.section2{
+    display: flex;
+    flex-direction: column;
+}
+.camera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 70px;
+}
+.cameratxtbox{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 0 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(52, 152, 219, 0.2);
+    border-radius: 20px;
+}
+.cameraimg{
+    width: 721px;
+    height: 350px;
+}
+.denumireaCamerei{
+    text-align: center;
+    font-size: 32px;
+}
+.descriereaCamerei{
+    text-align: left;
+    color: gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+.pretulCamerei{
+    font-size: 28px;
+    text-align: center;
+}
+.pretulCamerei span{
+    color: #B2241C;
+}
+.section2 h1{
+    text-align: center;
+    font-weight: normal;
+    font-size: 32px;
+}   
