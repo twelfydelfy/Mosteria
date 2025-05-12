@@ -12,18 +12,18 @@ let currentSlide = 1;
 let currentSection = 0;
 let languageVariable = 1;
 const left = document.querySelector('.left-selector')
-const right = document.querySelector('.right-selector')
+//const right = document.querySelector('.right-selector')
 const middle = document.querySelector('.middle-selector')
 const slider = document.querySelector('.slider');
 let leftState = false;
-let rightState = false;
+//let rightState = false;
 let middleState = false;
 let intervalul;
 
 function changeSlide() {
     slider.style.transition = 'all 0.4s ease-in';
-    if (currentSlide > 5) currentSlide = 1;
-    if (currentSlide < 1) currentSlide = 5;
+    if (currentSlide > 4) currentSlide = 1;
+    if (currentSlide < 1) currentSlide = 4;
     slider.style.marginLeft = `-${(currentSlide - 1) * 100}%`;
 }
 
@@ -37,13 +37,13 @@ function resetInterval() {
 }
 */
 
-document.querySelector('.right-arrow').addEventListener('click', () => {
+document.querySelector('.right-arrow-box').addEventListener('click', () => {
     currentSlide++;
     changeSlide();
     // resetInterval();
 });
 
-document.querySelector('.left-arrow').addEventListener('click', () => {
+document.querySelector('.left-arrow-box').addEventListener('click', () => {
     currentSlide--;
     changeSlide();
     // resetInterval();
@@ -52,17 +52,17 @@ sections();
 // resetInterval();
 function sections() {
     leftState = false;
-    rightState = false;
+    //rightState = false;
     middleState = false;
     left.style.color = 'black';
     left.style.backgroundColor = '#F1F1F1';
-    right.style.color = 'black';
-    right.style.backgroundColor = '#F1F1F1';
+    //right.style.color = 'black';
+    //right.style.backgroundColor = '#F1F1F1';
     middle.style.color = 'black';
     middle.style.backgroundColor = '#F1F1F1';
     document.querySelector('.section1').style.display = 'none';
     document.querySelector('.section2').style.display = 'none';
-    document.querySelector('.section3').style.display = 'none';
+    //document.querySelector('.section3').style.display = 'none';
     if (currentSection == 0) { console.log(0) }
     else if (currentSection == 1) {
         leftState = true;
@@ -76,12 +76,12 @@ function sections() {
         middle.style.backgroundColor = '#B2241C';
         document.querySelector('.section2').style.display = 'block';
     }
-    else if (currentSection == 3) {
+    /*else if (currentSection == 3) {
         rightState = true;
         right.style.color = 'white';
         right.style.backgroundColor = '#B2241C';
         document.querySelector('.section3').style.display = 'block';
-    }
+    }*/
 }
 left.addEventListener('click', () => {
     if (leftState == false) {
@@ -101,7 +101,7 @@ middle.addEventListener('click', () => {
         sections();
     }
 })
-right.addEventListener('click', () => {
+/*right.addEventListener('click', () => {
     if (rightState == false) {
         currentSection = 3;
         sections();
@@ -109,7 +109,7 @@ right.addEventListener('click', () => {
         currentSection = 0;
         sections();
     }
-});
+});*/
 
 function renderMenu(languageVariable) {
     document.querySelector('.h1').innerHTML = `${languageVariable == 1 ? 'Aperitive' : languageVariable == 2 ? 'Аппетитки' : 'Appetizers'}`;
