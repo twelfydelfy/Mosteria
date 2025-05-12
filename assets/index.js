@@ -10,7 +10,7 @@ import { alcool } from "./date.js";
 
 let currentSlide = 1;
 let currentSection = 0;
-let languageVariable = 1;
+let languageVariable = 2;
 const left = document.querySelector('.left-selector')
 //const right = document.querySelector('.right-selector')
 const middle = document.querySelector('.middle-selector')
@@ -19,7 +19,24 @@ let leftState = false;
 //let rightState = false;
 let middleState = false;
 let intervalul;
+let languageButton = false;
 
+document.querySelector('.language-button').addEventListener('click', ()=>{
+    if(languageButton == false){
+        document.querySelector('.button-opened').style.display = 'block';
+        languageButton =true;
+    }else{
+        document.querySelector('.button-opened').style.display = 'none';
+        languageButton = false;
+    }
+});
+
+document.addEventListener('click', (e)=>{
+    if(languageButton && !e.target.closest('.button-opened, .language-button')){
+        document.querySelector('.button-opened').style.display = 'none';
+        languageButton = false;
+    }
+})
 function changeSlide() {
     slider.style.transition = 'all 0.4s ease-in';
     if (currentSlide > 4) currentSlide = 1;
@@ -49,6 +66,24 @@ document.querySelector('.left-arrow-box').addEventListener('click', () => {
     // resetInterval();
 });
 sections();
+document.querySelector('.opened1').addEventListener('click', ()=>{
+    languageVariable = 1;
+    mainRender();
+    document.querySelector('.button-opened').style.display = 'none';
+    languageButton = false;
+})
+document.querySelector('.opened2').addEventListener('click', ()=>{
+    languageVariable = 2;
+    mainRender();
+    document.querySelector('.button-opened').style.display = 'none';
+    languageButton = false;
+})
+document.querySelector('.opened3').addEventListener('click', ()=>{
+    languageVariable = 3;
+    mainRender();
+    document.querySelector('.button-opened').style.display = 'none';
+    languageButton = false;
+})
 // resetInterval();
 function sections() {
     leftState = false;
@@ -83,6 +118,15 @@ function sections() {
         document.querySelector('.section3').style.display = 'block';
     }*/
 }
+function mainRender(){
+    document.querySelector('.contacts-button').innerHTML = `${languageVariable == 1 ? 'Contacte' : languageVariable == 2? 'Контакты' : 'Contacts'}`
+    document.querySelector('.left-selector').innerHTML = `${languageVariable == 1 ? 'Restaurant' : languageVariable == 2? 'Ресторан' : 'Restaurant'}`
+    document.querySelector('.middle-selector').innerHTML = `${languageVariable == 1? 'Hostel' : languageVariable == 2? ' Гостиница' : 'Hostel'}`
+    document.querySelector('.contacts-title').innerHTML = `${languageVariable == 1? 'Ne găsești la': languageVariable == 2? 'Найди нас в' : 'Find us at'}`
+    document.querySelector('.contacts p').innerHTML = `${languageVariable == 1? 'Strada Chișinăului 22': languageVariable == 2? 'Улица Кишинёва 22' : 'Chișinău Street 22'}`
+    renderMenu();
+}
+mainRender()
 left.addEventListener('click', () => {
     if (leftState == false) {
         currentSection = 1;
@@ -111,7 +155,7 @@ middle.addEventListener('click', () => {
     }
 });*/
 
-function renderMenu(languageVariable) {
+function renderMenu() {
     document.querySelector('.h1').innerHTML = `${languageVariable == 1 ? 'Aperitive' : languageVariable == 2 ? 'Аппетитки' : 'Appetizers'}`;
     document.querySelector('.h2').innerHTML = `${languageVariable == 1 ? 'Supe' : languageVariable == 2 ? 'Супы' : 'Soups'}`;
     document.querySelector('.h3').innerHTML = `${languageVariable == 1 ? 'Suplemente' : languageVariable == 2 ? 'Добавки' : 'Supplements'}`;
@@ -236,7 +280,7 @@ bauturi.forEach(bautura => {
                     <div class="upperdeck">
                     <img src="assets/images/white.png" class="imagebox">
                     <div class="pricebox">
-                        <p class="quantity">${bautura.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
+                        <p class="quantity">${bautura.gramaj} ${languageVariable == 2 ? 'мл': 'ml' }</p>
                         <p class="price">${bautura.pret} MDL</p>
                     </div></div>
                     <h2 class="productName"> ${languageVariable == 1 ? bautura.nume : languageVariable == 2 ? bautura.numerus : bautura.numeeng}</h2>
@@ -250,7 +294,7 @@ alcool.forEach(alc => {
                     <div class="upperdeck">
                     <img src="assets/images/white.png" class="imagebox">
                     <div class="pricebox">
-                        <p class="quantity">${alc.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
+                        <p class="quantity">${alc.gramaj} ${languageVariable == 2 ? 'мл': 'ml' }</p>
                         <p class="price">${alc.pret} MDL</p>
                     </div></div>
                     <h2 class="productName"> ${languageVariable == 1 ? alc.nume : languageVariable == 2 ? alc.numerus : alc.numeeng}</h2>
@@ -260,7 +304,7 @@ alcool.forEach(alc => {
 }
 renderMenu(languageVariable);
 
-function renderFoodTruck(languageVariable) {
+/*function renderFoodTruck(languageVariable) {
     document.querySelector('.fh1').innerHTML = `${languageVariable == 1 ? 'Aperitive' : languageVariable == 2 ? 'Аппетитки' : 'Appetizers'}`;
     document.querySelector('.fh2').innerHTML = `${languageVariable == 1 ? 'Supe' : languageVariable == 2 ? 'Супы' : 'Soups'}`;
     document.querySelector('.fh3').innerHTML = `${languageVariable == 1 ? 'Suplemente' : languageVariable == 2 ? 'Добавки' : 'Supplements'}`;
@@ -271,4 +315,4 @@ function renderFoodTruck(languageVariable) {
     document.querySelector('.fh8').innerHTML = `${languageVariable == 1 ? 'Băuturi' : languageVariable == 2 ? 'Напитки' : 'Drinks'}`;
     document.querySelector('.fc1').innerHTML = `${languageVariable == 1 ? 'salut' : languageVariable == 2 ? 'привет' : languageVariable == 3 ? 'hello' : undefined}`
 }
-renderFoodTruck(languageVariable);
+renderFoodTruck(languageVariable);*/
