@@ -17,7 +17,20 @@
     border-radius: 20px;
 }
 .cameraimg{
-    width: 721px;
+    width: 600px;
+    height: 350px;
+    overflow-x: hidden;
+    position: relative;
+}
+.cameraslider, .cameraslider2{
+    width: 300%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    transition: all ease-in 0.4s;
+}
+.cimg1, .cimg2, .cimg3{
+    width: 100%;
     height: 350px;
 }
 .denumireaCamerei{
@@ -44,3 +57,32 @@
     font-weight: normal;
     font-size: 32px;
 }   
+.c-leftarrowbox1, .c-rightarrowbox1, .c-leftarrowbox2, .c-rightarrowbox2{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 40px;
+    background-color: rgba(163, 163, 163, 0.644);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.c-leftarrowbox1 img, .c-leftarrowbox2 img{
+    height: 30px;
+    width: auto;
+    margin-left: -5px;
+}
+.c-rightarrowbox1 img, .c-rightarrowbox2 img{
+    height: 30px;
+    width: auto;
+    margin-right: -5px;
+}
+.c-leftarrowbox1, .c-leftarrowbox2{
+    left: 2%;   
+}
+.c-rightarrowbox1, .c-rightarrowbox2{
+    right:2%;
+}

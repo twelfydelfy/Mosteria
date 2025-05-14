@@ -9,8 +9,10 @@ import { bauturi } from "./date.js";
 import { alcool } from "./date.js";
 
 let currentSlide = 1;
+let HotelCurentSlide1 = 1;
+let HotelCurentSlide2 = 1;
 let currentSection = 0;
-let languageVariable = 2;
+let languageVariable = 1;
 const left = document.querySelector('.left-selector')
 //const right = document.querySelector('.right-selector')
 const middle = document.querySelector('.middle-selector')
@@ -43,7 +45,16 @@ function changeSlide() {
     if (currentSlide < 1) currentSlide = 4;
     slider.style.marginLeft = `-${(currentSlide - 1) * 100}%`;
 }
-
+function HotelChangeSlide1(){
+    if(HotelCurentSlide1 > 3) HotelCurentSlide1 = 1;
+    if(HotelCurentSlide1 < 1) HotelCurentSlide1 = 3
+    document.querySelector('.cameraslider').style.marginLeft = `-${(HotelCurentSlide1 - 1) * 100}%`;
+}
+function HotelChangeSlide2(){
+    if(HotelCurentSlide2 > 3) HotelCurentSlide2 = 1;
+    if(HotelCurentSlide2 < 1) HotelCurentSlide2 = 3;
+    document.querySelector('.cameraslider2').style.marginLeft = `-${(HotelCurentSlide2 - 1) * 100}%`;
+}
 /*
 function resetInterval() {
     clearInterval(intervalul);
@@ -64,6 +75,22 @@ document.querySelector('.left-arrow-box').addEventListener('click', () => {
     currentSlide--;
     changeSlide();
     // resetInterval();
+});
+document.querySelector('.c-leftarrowbox1').addEventListener('click', ()=>{
+    HotelCurentSlide1--;
+    HotelChangeSlide1();
+})
+document.querySelector('.c-rightarrowbox1').addEventListener('click', ()=>{
+    HotelCurentSlide1++;
+    HotelChangeSlide1();
+});
+document.querySelector('.c-leftarrowbox2').addEventListener('click', ()=>{
+    HotelCurentSlide2--;
+    HotelChangeSlide2();
+})
+document.querySelector('.c-rightarrowbox2').addEventListener('click', ()=>{
+    HotelCurentSlide2++;
+    HotelChangeSlide2();
 });
 sections();
 document.querySelector('.opened1').addEventListener('click', ()=>{
@@ -179,7 +206,7 @@ function renderMenu() {
         document.querySelector('.menuc1').innerHTML +=
             `<div class="box">
                         <div class="upperdeck">
-                        <img src="assets/images/white.png" class="imagebox">
+                        <img src="assets/images/menu/${aperitiv.id}.jpg" class="imagebox">
                         <div class="pricebox">
                             <p class="quantity">${aperitiv.gramaj} ${languageVariable == 2 ? 'г' : 'g'}</p>
                             <p class="price">${aperitiv.pret} MDL</p>
@@ -193,7 +220,7 @@ function renderMenu() {
         document.querySelector('.menuc2').innerHTML +=
             `<div class="box">
                         <div class="upperdeck">
-                        <img src="assets/images/white.png" class="imagebox">
+                        <img src="assets/images/menu/${supa.id}.jpg" class="imagebox">
                         <div class="pricebox">
                             <p class="quantity">${supa.gramaj} ${languageVariable == 2 ? 'г' : 'g'}</p>
                             <p class="price">${supa.pret} MDL</p>
@@ -207,7 +234,7 @@ function renderMenu() {
         document.querySelector('.menuc3').innerHTML +=
             `<div class="box">
                     <div class="upperdeck">
-                    <img src="assets/images/white.png" class="imagebox">
+                    <img src="assets/images/menu/${supliment.id}.jpg" class="imagebox">
                     <div class="pricebox">
                         <p class="quantity">${supliment.gramaj} ${languageVariable == 2 ? 'г' : 'g'}</p>
                         <p class="price">${supliment.pret} MDL</p>
@@ -221,7 +248,7 @@ function renderMenu() {
     document.querySelector('.menuc4').innerHTML +=
      `<div class="box">
                     <div class="upperdeck">
-                    <img src="assets/images/white.png" class="imagebox">
+                    <img src="assets/images/menu/${piza.id}.jpg" class="imagebox">
                     <div class="pricebox">
                         <p class="quantity">${piza.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
                         <p class="price">${piza.pret} MDL</p>
@@ -235,7 +262,7 @@ burger.forEach(burg => {
     document.querySelector('.menuc5').innerHTML +=
      `<div class="box">
                     <div class="upperdeck">
-                    <img src="assets/images/white.png" class="imagebox">
+                    <img src="assets/images/menu/${burg.id}.jpg" class="imagebox">
                     <div class="pricebox">
                         <p class="quantity">${burg.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
                         <p class="price">${burg.pret} MDL</p>
@@ -249,7 +276,7 @@ desert.forEach(des => {
     document.querySelector('.menuc6').innerHTML +=
      `<div class="box">
                     <div class="upperdeck">
-                    <img src="assets/images/white.png" class="imagebox">
+                    <img src="assets/images/menu/${des.id}.jpg" class="imagebox">
                     <div class="pricebox">
                         <p class="quantity">${des.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
                         <p class="price">${des.pret} MDL</p>
@@ -264,7 +291,7 @@ carne.forEach(carn => {
     document.querySelector('.menuc7').innerHTML +=
      `<div class="box">
                     <div class="upperdeck">
-                    <img src="assets/images/white.png" class="imagebox">
+                    <img src="assets/images/menu/${carn.id}.jpg" class="imagebox">
                     <div class="pricebox">
                         <p class="quantity">${carn.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
                         <p class="price">${carn.pret} MDL</p>
@@ -278,7 +305,7 @@ bauturi.forEach(bautura => {
     document.querySelector('.menuc8').innerHTML +=
      `<div class="box">
                     <div class="upperdeck">
-                    <img src="assets/images/white.png" class="imagebox">
+                    <img src="assets/images/menu/${bautura.id}.jpg" class="imagebox">
                     <div class="pricebox">
                         <p class="quantity">${bautura.gramaj} ${languageVariable == 2 ? 'мл': 'ml' }</p>
                         <p class="price">${bautura.pret} MDL</p>
@@ -292,7 +319,7 @@ alcool.forEach(alc => {
     document.querySelector('.menuc9').innerHTML +=
      `<div class="box">
                     <div class="upperdeck">
-                    <img src="assets/images/white.png" class="imagebox">
+                    <img src="assets/images/menu/${alc.id}.jpg" class="imagebox">
                     <div class="pricebox">
                         <p class="quantity">${alc.gramaj} ${languageVariable == 2 ? 'мл': 'ml' }</p>
                         <p class="price">${alc.pret} MDL</p>
@@ -302,8 +329,11 @@ alcool.forEach(alc => {
         </div>`
 });
 }
-renderMenu(languageVariable);
-
+renderMenu();
+function renderHotel(){
+    document.querySelector('.section2 h1').innerHTML = `${languageVariable == 1? 'Camere oferite' : languageVariable ==2 ? 'Предлагаемые номера': 'Rooms Offered'}`
+    document.querySelector('.')
+}
 /*function renderFoodTruck(languageVariable) {
     document.querySelector('.fh1').innerHTML = `${languageVariable == 1 ? 'Aperitive' : languageVariable == 2 ? 'Аппетитки' : 'Appetizers'}`;
     document.querySelector('.fh2').innerHTML = `${languageVariable == 1 ? 'Supe' : languageVariable == 2 ? 'Супы' : 'Soups'}`;

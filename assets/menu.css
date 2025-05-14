@@ -60,7 +60,6 @@
 .box{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     width: 250px;
 }
 .upperdeck{
@@ -69,12 +68,13 @@
 .imagebox{
     height: 250px;
     width: 250px;
+    border-radius: 10px;
 }
 .pricebox{
     position: absolute;
     bottom: 10px;
     right: 5px;
-    background-color: #D9D9D9;
+    background-color: #eaeaeada;
     border-radius: 14.25px;
     display: flex;
     flex-direction: row;
@@ -97,7 +97,7 @@
 }
 .quantity{
     font-size: 13px;
-    color: #6F6F6F;
+    color: #3d3d3d;
     margin: 0;
     font-weight: 500;
 }
