@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
 }
-.camera{
+.camera, .camera2{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -85,4 +85,38 @@
 }
 .c-rightarrowbox1, .c-rightarrowbox2{
     right:2%;
+}
+@media (max-width: 768px){
+    .camera{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .camera2{
+        flex-direction: column;
+        align-items: center;
+    }
+    .cameratxtbox{
+        width: 80%;
+        padding: 0 20px;
+        margin-bottom: 30px;
+    }
+    .cameraimg{
+        width: 90%;
+        height: 200px;
+    }
+    .cimg1, .cimg2, .cimg3{
+        height: 200px;
+        width: 100%;
+        object-fit: fill;
+    }
+    .denumireaCamerei{
+        font-size: 26px;
+    }
+    .pretulCamerei{
+        font-size: 20px;
+    }
+    .descriereaCamerei{
+        font-size: 14px;
+        margin: 0;
+    }
 }

@@ -50,7 +50,7 @@
 .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10{
     padding-left: 30px;
 }
-.menuc1, .menuc2, .menuc3, .menuc4, .menuc5, .menuc6, .menuc7, .menuc8, .menuc9, .menu10{
+.menuc1, .menuc2, .menuc3, .menuc4, .menuc5, .menuc6, .menuc7, .menuc8, .menuc9{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-content: space-evenly;
@@ -105,4 +105,71 @@
     font-size: 16px;
     margin: 0;
     font-weight: 500;
+}
+
+
+@media (max-width: 768px){
+    .despre{
+        padding: 20px 10px;
+        flex-direction: column;
+    }
+    .despreimg{
+        width: 90%;
+        height: auto;
+    }
+    .despretxt{
+        max-width: 90%;
+        font-size: 15px;
+    }
+    .section1header{
+        flex-direction: column;
+        width: 95%;
+        padding: 10px 2.5%;
+        height: 70px;
+        background-color: rgb(207, 207, 207);
+    }
+    .categorii{
+        width: 100%;
+        justify-content: space-between;
+
+    }
+    .categorii a{
+        font-size: 20px;
+        text-align: center;
+    }
+    .categorii a:hover{
+        transform: scale(1);
+        color: black;
+    }
+    .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9{
+        font-size: 25px;
+        padding-left: 12px;
+    }
+    .menuc1, .menuc2, .menuc3, .menuc4, .menuc5, .menuc6, .menuc7, .menuc8, .menuc9{
+        grid-template-columns: 1fr 1fr;
+    }
+    .box{
+        width: 150px;
+    }
+    .imagebox{
+        width: 150px;
+        height: 150px;
+    }
+    .pricebox{
+        width: 100px;
+        padding: 2px 5px;
+        bottom: 8px;
+        right: 3px;
+    }
+    .productDescription{
+        font-size: 12px;
+        padding: 5px 5px;
+    }
+    .quantity{
+        font-size: 9px;
+    }
+    .price{
+        font-size: 14px;
+    }
+
 }

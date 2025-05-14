@@ -64,6 +64,30 @@ function resetInterval() {
     }, 5000);
 }
 */
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.section, .despre, .camera, .camera2, .contacts-container');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    elements.forEach(element => {
+        element.classList.add('fade-in-up');
+        observer.observe(element);
+    });
+});
+
 
 document.querySelector('.right-arrow-box').addEventListener('click', () => {
     currentSlide++;
@@ -75,6 +99,7 @@ document.querySelector('.left-arrow-box').addEventListener('click', () => {
     currentSlide--;
     changeSlide();
     // resetInterval();
+    
 });
 document.querySelector('.c-leftarrowbox1').addEventListener('click', ()=>{
     HotelCurentSlide1--;
