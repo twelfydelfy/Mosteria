@@ -51,19 +51,19 @@ function HotelChangeSlide1(){
     document.querySelector('.cameraslider').style.marginLeft = `-${(HotelCurentSlide1 - 1) * 100}%`;
 }
 function HotelChangeSlide2(){
-    if(HotelCurentSlide2 > 3) HotelCurentSlide2 = 1;
-    if(HotelCurentSlide2 < 1) HotelCurentSlide2 = 3;
+    if(HotelCurentSlide2 > 5) HotelCurentSlide2 = 1;
+    if(HotelCurentSlide2 < 1) HotelCurentSlide2 = 5;
     document.querySelector('.cameraslider2').style.marginLeft = `-${(HotelCurentSlide2 - 1) * 100}%`;
 }
-/*
+
 function resetInterval() {
     clearInterval(intervalul);
     intervalul = setInterval(() => {
         currentSlide++;
         changeSlide();
-    }, 5000);
+    }, 30000000);
 }
-*/
+
 document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll('.section, .despre, .camera, .camera2, .contacts-container');
 
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelector('.right-arrow-box').addEventListener('click', () => {
     currentSlide++;
     changeSlide();
-    // resetInterval();
+    resetInterval();
 });
 
 document.querySelector('.left-arrow-box').addEventListener('click', () => {
@@ -136,7 +136,7 @@ document.querySelector('.opened3').addEventListener('click', ()=>{
     document.querySelector('.button-opened').style.display = 'none';
     languageButton = false;
 })
-// resetInterval();
+ resetInterval();
 function sections() {
     leftState = false;
     //rightState = false;
@@ -373,3 +373,17 @@ function renderHotel(){
     document.querySelector('.fc1').innerHTML = `${languageVariable == 1 ? 'salut' : languageVariable == 2 ? 'привет' : languageVariable == 3 ? 'hello' : undefined}`
 }
 renderFoodTruck(languageVariable);*/
+
+//Animation
+document.addEventListener("DOMContentLoaded", () => {
+    let e = document.querySelectorAll(".left-selector, .middle-selector, .box"),
+        t = () => {
+            let t = 1 * window.innerHeight;
+            e.forEach(e => {
+                let i = e.getBoundingClientRect().top;
+                i < t ? e.classList.add("show") : e.classList.remove("show");
+            });
+        };
+    window.addEventListener("scroll", t);
+    t();
+});

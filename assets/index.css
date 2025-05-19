@@ -6,7 +6,46 @@ body {
     overflow-x: hidden;
     user-select: none;
 }
+.box {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+    will-change: transform, opacity;
 
+}
+
+.box.show
+ {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/*.image-header p {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(50px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.image-header p.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+}
+
+#descriere {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+
+#descriere.show {
+    opacity: 1;
+    transform: translateY(0);
+}*/
 
 * {
     font-family: Inter;
