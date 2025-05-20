@@ -1,3 +1,13 @@
+@keyframes up{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .menu{
     display: flex;
     flex-direction: column;
@@ -9,18 +19,23 @@
     justify-content: space-evenly;
     padding: 30px 50px;
     align-items: center;
+    
 }
 .despreimg{
     height: 339px;
     width: 45%;
     border-radius: 30px;
+    animation: up 0.6s ease;
 }
 .despretxt{
     max-width: 40%;
     font-size: 20px;
     line-height: 1.5em;
     text-align: center;
-    
+    animation: up 0.6s ease;
+}
+.section2 h1{
+    animation: up 0.6s ease;
 }
 .section1header{
     margin-top: 20px;
@@ -30,6 +45,7 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: #F1F1F1;
+    animation: up 0.6s ease;
 }
 .categorii{
     width: 46%;

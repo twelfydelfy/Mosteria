@@ -179,6 +179,8 @@ function mainRender(){
     document.querySelector('#despretxt2').innerHTML = `${languageVariable == 1? 'Bine ați venit la Hostel, aflat la doar câțiva pași de Restaurantul Mosteria, oferim cazare primitoare, cu camere confortabile și o atmosferă caldă, perfectă pentru odihnă și relaxare. Dacă ai nevoie de un loc peste noapte sau dacă călătorești prin zonă, hostelul nostru este alegerea ideală!': languageVariable == 2? 'Добро пожаловать в наш хостел, расположенный всего в нескольких шагах от ресторана Мостерия! Мы предлагаем уютное размещение с комфортабельными номерами и теплой атмосферой, идеально подходящей для отдыха и релакса. Если вам нужно место для ночлега или вы путешествуете по окрестностям, наш хостел — идеальный выбор!' : 'Welcome to our hostel, located just a few steps from Mosteria Restaurant! We offer cozy accommodation with comfortable rooms and a warm atmosphere, perfect for rest and relaxation. Whether you need a place for the night or are traveling through the area, our hostel is the ideal choice!'}`;
     document.querySelector('#despretxt').innerHTML = `${languageVariable == 1? 'Bine ați venit la Restaurantul Mosteria, un colț al Italiei ascuns în inima Anenilor Noi! Aici, savoarea bucătăriei italiene prinde viață în fiecare farfurie, iar vinurile atent selecționate completează perfect o experiență culinară de neuitat. Vă invităm să vă bucurați de arome autentice, ospitalitate caldă și un strop de dolce vita, chiar la noi acasă!' : languageVariable == 2? 'Добро пожаловать в ресторан Mosteria, уголок Италии, спрятанный в самом сердце Анений Ной! Здесь вкус итальянской кухни оживает в каждом блюде, а тщательно подобранные вина идеально дополняют незабываемое кулинарное путешествие. Приглашаем насладиться аутентичными ароматами, теплым гостеприимством и частичкой dolce vita прямо у нас!' : 'Welcome to Mosteria Restaurant, a slice of Italy tucked away in the heart of Anenii Noi! Here, the flavors of Italian cuisine come to life in every dish, and carefully selected wines perfectly complement an unforgettable culinary experience. We invite you to savor authentic aromas, warm hospitality, and a touch of dolce vita, right at our home!'}`;
     renderMenu();
+    renderHotel();
+    animations();
 }
 mainRender()
 left.addEventListener('click', () => {
@@ -189,6 +191,7 @@ left.addEventListener('click', () => {
         currentSection = 0;
         sections();
     }
+    animations();
 });
 middle.addEventListener('click', () => {
     if (middleState == false) {
@@ -198,6 +201,7 @@ middle.addEventListener('click', () => {
         currentSection = 0;
         sections();
     }
+    animations();
 })
 /*right.addEventListener('click', () => {
     if (rightState == false) {
@@ -359,7 +363,10 @@ alcool.forEach(alc => {
 renderMenu();
 function renderHotel(){
     document.querySelector('.section2 h1').innerHTML = `${languageVariable == 1? 'Camere oferite' : languageVariable ==2 ? 'Предлагаемые номера': 'Rooms Offered'}`
-    document.querySelector('.')
+    document.querySelector('.denumireaCamerei').innerHTML = `${languageVariable == 1? 'Cameră Dublă': languageVariable ==2? 'Двухместный номер' : 'Double Room'}`
+    document.querySelector('.pretulCamerei').innerHTML = `${languageVariable == 1? '800 MDL / 24 Ore <br> <span>600MDL / Noapte </span>': languageVariable == 2? '800 MDL / 24 часа <br> <span>600MDL / Ночь </span>': '800 MDL / 24 Hours <br> <span>600MDL / Night </span>'}`
+    document.querySelector('.denumireaCamerei2').innerHTML = `${languageVariable == 1? 'Cameră Family' : languageVariable == 2? 'Семейный номер': 'Family Room'}`
+    document.querySelector('.pretulCamerei2').innerHTML = `${languageVariable == 1? '1200 MDL / 24 Ore <br><span>800 MDL / Noapte</span>' : languageVariable == 2? '1200 MDL / 24 часа <br><span>800 MDL / Ночь</span>' : '1200 MDL / 24 Hours <br><span>800 MDL / Night</span>'}`
 }
 /*function renderFoodTruck(languageVariable) {
     document.querySelector('.fh1').innerHTML = `${languageVariable == 1 ? 'Aperitive' : languageVariable == 2 ? 'Аппетитки' : 'Appetizers'}`;
@@ -375,8 +382,9 @@ function renderHotel(){
 renderFoodTruck(languageVariable);*/
 
 //Animation
-document.addEventListener("DOMContentLoaded", () => {
-    let e = document.querySelectorAll(".left-selector, .middle-selector, .box"),
+document.addEventListener("DOMContentLoaded", animations());
+function animations(){
+    let e = document.querySelectorAll(".left-selector, .middle-selector, .box, .cameraimg, .cameratxtbox, .contacts, .contacts-title"),
         t = () => {
             let t = 1 * window.innerHeight;
             e.forEach(e => {
@@ -386,4 +394,4 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     window.addEventListener("scroll", t);
     t();
-});
+}
