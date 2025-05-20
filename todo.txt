@@ -1,5 +1,3 @@
 > Marimea la slider sa fie in vh
-> Limba rusa la hotel
-> Animatii
 > Slider 1 la hotel largim imaginea
 > Schimbarile din meinu

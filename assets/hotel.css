@@ -58,7 +58,7 @@
     font-size: 28px;
     text-align: center;
 }
-.pretulCamerei span{
+.pretulCamerei span, .pretulCamerei2 span{
     color: #B2241C;
 }
 .section2 h1{
@@ -118,14 +118,10 @@
         width: 100%;
         object-fit: fill;
     }
-    .denumireaCamerei{
+    .denumireaCamerei, .denumireaCamerei2{
         font-size: 26px;
     }
-    .pretulCamerei{
+    .pretulCamerei, .pretulCamerei2{
         font-size: 20px;
-    }
-    .descriereaCamerei{
-        font-size: 14px;
-        margin: 0;
     }
 }

@@ -22,7 +22,6 @@ let leftState = false;
 let middleState = false;
 let intervalul;
 let languageButton = false;
-
 document.querySelector('.language-button').addEventListener('click', ()=>{
     if(languageButton == false){
         document.querySelector('.button-opened').style.display = 'block';
