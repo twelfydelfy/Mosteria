@@ -1,3 +1,0 @@
-> Marimea la slider sa fie in vh
-> Slider 1 la hotel largim imaginea
-> Schimbarile din meinu

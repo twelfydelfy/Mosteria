@@ -109,14 +109,25 @@
         padding: 0 20px;
         margin-bottom: 30px;
     }
+    .cameraslider{
+        width: 300%;
+    }
+    .cameraslider2{
+        width: 500%;
+    }
     .cameraimg{
         width: 90%;
-        height: 200px;
+        height: auto;
     }
-    .cimg1, .cimg2, .cimg3, .cimg4, .cimg5{
-        height: 200px;
-        width: 100%;
+    .cameraslider .cimg1, .cameraslider .cimg2, .cameraslider .cimg3{
+        height: 208px;
+        width: 33%;
         object-fit: fill;
+    }
+    .cameraslider2 .cimg1, .cameraslider2 .cimg2, .cameraslider2 .cimg3, .cameraslider2 .cimg4, .cameraslider2 .cimg5{
+        height: 208px;
+        width: 20%;
+        object-fit: cover;
     }
     .denumireaCamerei, .denumireaCamerei2{
         font-size: 26px;
