@@ -12,7 +12,8 @@ let currentSlide = 1;
 let HotelCurentSlide1 = 1;
 let HotelCurentSlide2 = 1;
 let currentSection = 0;
-let languageVariable = 1;
+let languageVariable = JSON.parse(localStorage.getItem('languageVariable') || '1');
+
 const left = document.querySelector('.left-selector')
 //const right = document.querySelector('.right-selector')
 const middle = document.querySelector('.middle-selector')
@@ -60,7 +61,7 @@ function resetInterval() {
     intervalul = setInterval(() => {
         currentSlide++;
         changeSlide();
-    }, 30000000);
+    }, 3000);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -119,18 +120,21 @@ document.querySelector('.c-rightarrowbox2').addEventListener('click', ()=>{
 sections();
 document.querySelector('.opened1').addEventListener('click', ()=>{
     languageVariable = 1;
+    document.querySelector('.language-button').innerHTML = `<img src="assets/images/globe.png"> ${'RO'}`
     mainRender();
     document.querySelector('.button-opened').style.display = 'none';
     languageButton = false;
 })
 document.querySelector('.opened2').addEventListener('click', ()=>{
     languageVariable = 2;
+    document.querySelector('.language-button').innerHTML = `<img src="assets/images/globe.png"> ${'RU'}`
     mainRender();
     document.querySelector('.button-opened').style.display = 'none';
     languageButton = false;
 })
 document.querySelector('.opened3').addEventListener('click', ()=>{
     languageVariable = 3;
+    document.querySelector('.language-button').innerHTML = `<img src="assets/images/globe.png"> ${'EN'}`
     mainRender();
     document.querySelector('.button-opened').style.display = 'none';
     languageButton = false;
@@ -180,6 +184,9 @@ function mainRender(){
     renderMenu();
     renderHotel();
     animations();
+    localStorage.setItem('languageVariable', JSON.stringify(languageVariable));
+
+
 }
 mainRender()
 left.addEventListener('click', () => {
