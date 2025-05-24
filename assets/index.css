@@ -294,6 +294,19 @@ body {
     width: 500px;
     height: 300px;
 }
+.credentials p{
+    margin: 3px;
+    font-size: 20px;
+}
+.credentials a{
+    height: 22px;
+    width: 22px;
+}
+.credentials img{
+    height: 22px;
+    width: 22px;
+    margin-left: 7px;
+}
 @media (max-width: 768px){
     .logo{
         height: 20px;
