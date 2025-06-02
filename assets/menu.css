@@ -50,19 +50,13 @@
     background-color: #F1F1F1;
     animation: up 0.6s ease;
 }
-.categorii{
-    width: 46%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.categorii a{
+.section1header a{
     font-size: 24px;
     text-decoration: none;
     color: black;
     transition: all ease-in-out 0.1s;
 }
-.categorii a:hover{
+.section1header a:hover{
     transform: scale(1.15);
     color: #B2241C;
 }
@@ -150,21 +144,21 @@
     }
     .section1header{
         flex-direction: column;
+        align-items: center;
         width: 95%;
         padding: 10px 2.5%;
-        height: 70px;
         background-color: rgb(207, 207, 207);
     }
-    .categorii{
-        width: 100%;
-        justify-content: space-between;
-
-    }
-    .categorii a{
+    .section1header a{
         font-size: 20px;
+        width: 100%;
         text-align: center;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
     }
-    .categorii a:hover{
+    .section1header a:hover{
         transform: scale(1);
         color: black;
     }

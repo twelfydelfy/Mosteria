@@ -89,18 +89,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.querySelector('.right-arrow-box').addEventListener('click', () => {
+/*document.querySelector('.right-arrow-box').addEventListener('click', () => {
     currentSlide++;
     changeSlide();
     resetInterval();
-});
+});*/
 
-document.querySelector('.left-arrow-box').addEventListener('click', () => {
+/*document.querySelector('.left-arrow-box').addEventListener('click', () => {
     currentSlide--;
     changeSlide();
     // resetInterval();
     
-});
+});*/
 document.querySelector('.c-leftarrowbox1').addEventListener('click', ()=>{
     HotelCurentSlide1--;
     HotelChangeSlide1();
