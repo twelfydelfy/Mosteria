@@ -378,4 +378,12 @@ body {
     .contacts-box{
         transform: scale(0.8);
     }
+    .button-opened{
+        width: 70px;
+        left: 2.5%;
+        top: 35px;
+    }
+    .opened1, .opened2, .opened3{
+        font-size: 18px !important;
+    }
 }

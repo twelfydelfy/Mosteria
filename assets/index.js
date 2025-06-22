@@ -11,13 +11,16 @@ import { alcool } from "./date.js";
 let currentSlide = 1;
 let HotelCurentSlide1 = 1;
 let HotelCurentSlide2 = 1;
-let currentSection = 0;
+let currentSection = 1;
 let languageVariable = JSON.parse(localStorage.getItem('languageVariable') || '1');
+let mCategsState = false;
 
 const left = document.querySelector('.left-selector')
 //const right = document.querySelector('.right-selector')
 const middle = document.querySelector('.middle-selector')
 const slider = document.querySelector('.slider');
+const mbuton = document.querySelector('.mbuton');
+const categsMobile = document.querySelector('.categs-mobile');
 let leftState = false;
 //let rightState = false;
 let middleState = false;
@@ -38,6 +41,39 @@ document.addEventListener('click', (e)=>{
         document.querySelector('.button-opened').style.display = 'none';
         languageButton = false;
     }
+})
+
+document.querySelector('.mbuton').addEventListener('click', ()=>{
+    mbutonHandler();
+});
+
+function mbutonHandler(){
+    if(!mCategsState){
+        document.querySelectorAll('.categs-mobile a').forEach(a => a.style.opacity = '0');
+        mbuton.style.width = '95%';
+        mbuton.style.right = '2.5%';
+        categsMobile.style.display = 'flex';
+        setTimeout(()=>{ 
+            categsMobile.style.width = '95%';
+            document.querySelectorAll('.categs-mobile a').forEach(a => a.style.opacity = '1')
+        }, 250)
+        mCategsState = true;
+    }
+    else if(mCategsState){
+        categsMobile.style.width = '0%';
+        setTimeout(()=>{
+            categsMobile.style.display = 'none';
+            mbuton.style.width = '48px';
+            mbuton.style.right = '15px';
+        }, 250);
+        mCategsState = false;
+    }
+}
+document.querySelectorAll('.categs-mobile a').forEach(a => {
+    a.addEventListener('click', ()=>{
+        mCategsState = true;
+        mbutonHandler();
+    })
 })
 function changeSlide() {
     slider.style.transition = 'all 0.6s ease-in';
@@ -222,14 +258,14 @@ middle.addEventListener('click', () => {
 });*/
 
 function renderMenu() {
-    document.querySelector('.h1').innerHTML = `${languageVariable == 1 ? 'Aperitive' : languageVariable == 2 ? 'Аппетитки' : 'Appetizers'}`;
-    document.querySelector('.h2').innerHTML = `${languageVariable == 1 ? 'Supe' : languageVariable == 2 ? 'Супы' : 'Soups'}`;
-    document.querySelector('.h3').innerHTML = `${languageVariable == 1 ? 'Suplemente' : languageVariable == 2 ? 'Добавки' : 'Supplements'}`;
-    document.querySelector('.h4').innerHTML = `${languageVariable == 1 ? 'Pizza' : languageVariable == 2 ? 'Пицца' : 'Pizza'}`;
-    document.querySelector('.h5').innerHTML = `${languageVariable == 1 ? 'Burgeri' : languageVariable == 2 ? 'Бургеры' : 'Burgers'}`;
-    document.querySelector('.h6').innerHTML = `${languageVariable == 1 ? 'Desert' : languageVariable == 2 ? 'Десерты' : 'Desserts'}`;
-    document.querySelector('.h7').innerHTML = `${languageVariable == 1 ? 'Bucate' : languageVariable == 2 ? 'Блюда' : 'Dishes'}`;
-    document.querySelector('.h8').innerHTML = `${languageVariable == 1 ? 'Băuturi' : languageVariable == 2 ? 'Напитки' : 'Drinks'}`;
+    document.querySelectorAll('.h1').forEach(h1 => h1.innerHTML = `${languageVariable == 1 ? 'Aperitive' : languageVariable == 2 ? 'Аппетитки' : 'Appetizers'}`);
+document.querySelectorAll('.h2').forEach(h2 => h2.innerHTML = `${languageVariable == 1 ? 'Supe' : languageVariable == 2 ? 'Супы' : 'Soups'}`);
+document.querySelectorAll('.h3').forEach(h3 => h3.innerHTML = `${languageVariable == 1 ? 'Suplemente' : languageVariable == 2 ? 'Добавки' : 'Supplements'}`);
+document.querySelectorAll('.h4').forEach(h4 => h4.innerHTML = `${languageVariable == 1 ? 'Pizza' : languageVariable == 2 ? 'Пицца' : 'Pizza'}`);
+document.querySelectorAll('.h5').forEach(h5 => h5.innerHTML = `${languageVariable == 1 ? 'Burgeri' : languageVariable == 2 ? 'Бургеры' : 'Burgers'}`);
+document.querySelectorAll('.h6').forEach(h6 => h6.innerHTML = `${languageVariable == 1 ? 'Desert' : languageVariable == 2 ? 'Десерты' : 'Desserts'}`);
+document.querySelectorAll('.h7').forEach(h7 => h7.innerHTML = `${languageVariable == 1 ? 'Bucate' : languageVariable == 2 ? 'Блюда' : 'Dishes'}`);
+document.querySelectorAll('.h8').forEach(h8 => h8.innerHTML = `${languageVariable == 1 ? 'Băuturi' : languageVariable == 2 ? 'Напитки' : 'Drinks'}`);
     document.querySelector('.c1').innerHTML = `${languageVariable == 1 ? 'Aperitive' : languageVariable == 2 ? 'Аппетитки' : 'Appetizers'}`;
     document.querySelector('.c2').innerHTML = `${languageVariable == 1 ? 'Supe' : languageVariable == 2 ? 'Супы' : 'Soups'}`;
     document.querySelector('.c3').innerHTML = `${languageVariable == 1 ? 'Suplemente' : languageVariable == 2 ? 'Добавки' : 'Supplements'}`;
