@@ -8,7 +8,7 @@ let aperitive = [
         numeeng: "Bruschettes",
         numerus: "Брускетты",
         pret: 60,
-        gramaj: 180,
+        gramaj: 100,
         descriere: "(roșii, mozzarella și sos pesto)",
         descriereeng: "(tomatoes, mozzarella and pesto sauce)",
         descriererus: "(помидор, моцарелла,соус песто)"
@@ -20,7 +20,7 @@ let aperitive = [
         numeeng: "Bruschettes",
         numerus: "Брускетты",
         pret: 50,
-        gramaj: 180,
+        gramaj: 100,
         descriererus:"(перец капия,маслины, оливки, крем сыр)",
         descriere:"(ardei capia, măsline și cremă de brânză)",
         descriereeng:"(capsicum, olives and cream cheese)"
@@ -32,10 +32,10 @@ let aperitive = [
         numeeng: "Bruschettes",
         numerus: "Брускетты",
         pret: 60,
-        gramaj: 180,
-        descriererus:"(прошутто, оливки, маслины, крем сыр)",
-        descriere:"(proșoto, olive, măsline și cremă de brânză)",
-        descriereeng: "(prosciuto, olives, black olives and creme cheese)"
+        gramaj: 100,
+        descriererus:"(прошутто, маслины, крем сыр)",
+        descriere:"(proșoto, măsline și cremă de brânză)",
+        descriereeng: "(prosciuto, black olives and creme cheese)"
     },
     {
         id: 104,
@@ -43,8 +43,8 @@ let aperitive = [
         nume:"Aripi Pane",
         numeeng: "Wedge wings",
         numerus: "Куриные крылышки в панировке",
-        pret: 55,
-        gramaj: 200,
+        pret: 60,
+        gramaj: 180,
         descriererus:"",
         descriere:"",
         descriereeng:""
@@ -55,8 +55,8 @@ let aperitive = [
         nume:"Nuggets",
         numeeng:"Nuggets",
         numerus: "Наггетсы",
-        pret: 65,
-        gramaj: 200,
+        pret: 70,
+        gramaj: 140,
         descriererus:"",
         descriere:"",
         descriereeng:""
@@ -67,8 +67,8 @@ let aperitive = [
         nume:"Cartofi pai",
         numeeng:"French fries",
         numerus: "Картошка фри",
-        pret: 30,
-        gramaj: 135,
+        pret: 35,
+        gramaj: 130,
         descriererus:"",
         descriere:"",
         descriereeng:""
@@ -79,7 +79,7 @@ let aperitive = [
         nume:"Cartofi în stil rustic",
         numeeng:"Rustic style potatoes",
         numerus:"Картошка по деревенски",
-        pret: 40,
+        pret: 45,
         gramaj: 135,
         descriererus:"",
         descriere:"",
@@ -177,22 +177,26 @@ let supe = [
     {
         id:200,
         imagine: "Assets/white.jpg",
-        nume:"Supă cu cașcaval",
-        numeeng: "Cheese Soup",
-        numerus:"Cырный суп",
+        nume:"Supă cu cașcaval și ciuperci",
+        numeeng: "Cheese and mushroom Soup",
+        numerus:"Сырно-грибной суп",
         pret: 60,
         gramaj: 400,
-        descriere:""
+        descriere:"cașcaval topit, file de pui, ciuperci, frișcă",
+        descriereeng: "melted cheese, chicken fillet, mushrooms, whipped cream",
+        descriererus: "плавленый сыр, куриное филе, грибы, взбитые сливки"
     },
     {
         id:201,
         imagine: "Assets/white.jpg",
-        nume:"Soleancă din carne",
-        numeeng: "Meat stew",
-        numerus:"Солянка с мясом",
+        nume:"Soleancă cu carne de vită și salam",
+        numeeng: "Beef and salami stew",
+        numerus:"Тушеная говядина с салями",
         pret: 70,
         gramaj: 400,
-        descriere:""
+        descriere:"carne de vită, mix salam, roșii, ardei capia",
+        descriereeng: "beef, salami mix, tomatoes, bell peppers",
+        descriererus: "говядина, смесь салями, помидоры, болгарский перец"
     }
 ];
 let suplemente = [
