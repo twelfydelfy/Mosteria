@@ -51,26 +51,30 @@ document.querySelector('.mbuton').addEventListener('click', () => {
     mbutonHandler();
 });
 
-function mbutonHandler() {
-    if (!mCategsState) {
-        // Fade out links
+function mbutonHandler(){
+    const innerWidth = window.innerWidth;
+    if(!mCategsState){
         document.querySelectorAll('.categs-mobile a').forEach(a => a.style.opacity = '0');
-        
-        // Set mbuton styles
-        mbuton.style.width = '95%';
+        if(innerWidth <= 768){
+        mbuton.style.width = '95%';}
+        else{
+            mbuton.style.width = '50%';
+        }
         mbuton.style.right = '2.5%';
         categsMobile.style.display = 'flex';
-
-        // Animate categsMobile width and fade in links
-        setTimeout(() => {
-            categsMobile.style.width = '95%';
-            document.querySelectorAll('.categs-mobile a').forEach(a => a.style.opacity = '1');
-        }, 250);
+        setTimeout(()=>{
+            if(innerWidth <= 768){
+            categsMobile.style.width = '95%';}
+            else{
+                categsMobile.style.width = '50%';
+            }
+            document.querySelectorAll('.categs-mobile a').forEach(a => a.style.opacity = '1')
+        }, 250)
         mCategsState = true;
-    } else {
-        // Collapse menu
-        categsMobile.style.width = '0';
-        setTimeout(() => {
+    }
+    else if(mCategsState){
+        categsMobile.style.width = '0%';
+        setTimeout(()=>{
             categsMobile.style.display = 'none';
             mbuton.style.width = '48px';
             mbuton.style.right = '15px';
@@ -390,7 +394,6 @@ desert.forEach(des => {
                         <p class="price">${des.pret} MDL</p>
                     </div></div>
                     <h2 class="productName"> ${languageVariable == 1 ? des.nume : languageVariable == 2 ? des.numerus : des.numeeng}</h2>
-                    <p class="productDescription"></p>
         </div>`
 });
 document.querySelector('.menuc8').innerHTML = '';
@@ -418,7 +421,6 @@ bauturi.forEach(bautura => {
                         <p class="price">${bautura.pret} MDL</p>
                     </div></div>
                     <h2 class="productName"> ${languageVariable == 1 ? bautura.nume : languageVariable == 2 ? bautura.numerus : bautura.numeeng}</h2>
-                    <p class="productDescription"></p>
         </div>`
 });
 document.querySelector('.menuc10').innerHTML = '';
@@ -432,7 +434,6 @@ alcool.forEach(alc => {
                         <p class="price">${alc.pret} MDL</p>
                     </div></div>
                     <h2 class="productName"> ${languageVariable == 1 ? alc.nume : languageVariable == 2 ? alc.numerus : alc.numeeng}</h2>
-                    <p class="productDescription"></p>
         </div>`
 });
 document.querySelector('.menuc11').innerHTML = '';
@@ -446,7 +447,6 @@ bere.forEach(una => {
                         <p class="price">${una.pret} MDL</p>
                     </div></div>
                     <h2 class="productName"> ${languageVariable == 1 ? una.nume : languageVariable == 2 ? una.numerus : una.numeeng}</h2>
-                    <p class="productDescription">${languageVariable == 1 ? una.descriere : languageVariable == 2 ? una.descriererus : una.descriereeng}</p>
         </div>`
 });
 document.querySelector('.menuc12').innerHTML = '';
@@ -460,7 +460,6 @@ vin.forEach(unvin => {
                         <p class="price">${unvin.pret} MDL</p>
                     </div></div>
                     <h2 class="productName"> ${languageVariable == 1 ? unvin.nume : languageVariable == 2 ? unvin.numerus : unvin.numeeng}</h2>
-                    <p class="productDescription">${languageVariable == 1 ? unvin.descriere : languageVariable == 2 ? unvin.descriererus : unvin.descriereeng}</p>
         </div>`
 });
 }
