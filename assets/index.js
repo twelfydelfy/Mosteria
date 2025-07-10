@@ -1,12 +1,15 @@
-import { aperitive } from "./date.js";
-import { supe } from "./date.js";
-import { suplemente } from "./date.js";
-import { pizza } from "./date.js";
-import { burger } from "./date.js";
-import { desert } from "./date.js";
-import { carne } from "./date.js";
-import { bauturi } from "./date.js";
-import { alcool } from "./date.js";
+import { gustari } from "./date2.js";
+import { supe } from "./date2.js";
+import { pizza } from "./date2.js";
+import { bucate } from "./date2.js";
+import { burgere } from "./date2.js";
+import { plato } from "./date2.js";
+import { desert } from "./date2.js";
+import { calde } from "./date2.js";
+import { bauturi } from "./date2.js";
+import { alcool } from "./date2.js";
+import { bere } from "./date2.js";
+import { vin } from "./date2.js";
 
 let currentSlide = 1;
 let HotelCurentSlide1 = 1;
@@ -43,25 +46,31 @@ document.addEventListener('click', (e)=>{
     }
 })
 
-document.querySelector('.mbuton').addEventListener('click', ()=>{
+
+document.querySelector('.mbuton').addEventListener('click', () => {
     mbutonHandler();
 });
 
-function mbutonHandler(){
-    if(!mCategsState){
+function mbutonHandler() {
+    if (!mCategsState) {
+        // Fade out links
         document.querySelectorAll('.categs-mobile a').forEach(a => a.style.opacity = '0');
+        
+        // Set mbuton styles
         mbuton.style.width = '95%';
         mbuton.style.right = '2.5%';
         categsMobile.style.display = 'flex';
-        setTimeout(()=>{ 
+
+        // Animate categsMobile width and fade in links
+        setTimeout(() => {
             categsMobile.style.width = '95%';
-            document.querySelectorAll('.categs-mobile a').forEach(a => a.style.opacity = '1')
-        }, 250)
+            document.querySelectorAll('.categs-mobile a').forEach(a => a.style.opacity = '1');
+        }, 250);
         mCategsState = true;
-    }
-    else if(mCategsState){
-        categsMobile.style.width = '0%';
-        setTimeout(()=>{
+    } else {
+        // Collapse menu
+        categsMobile.style.width = '0';
+        setTimeout(() => {
             categsMobile.style.display = 'none';
             mbuton.style.width = '48px';
             mbuton.style.right = '15px';
@@ -214,7 +223,7 @@ function mainRender(){
     document.querySelector('.left-selector').innerHTML = `${languageVariable == 1 ? 'Restaurant' : languageVariable == 2? 'Ресторан' : 'Restaurant'}`
     document.querySelector('.middle-selector').innerHTML = `${languageVariable == 1? 'Hostel' : languageVariable == 2? ' Гостиница' : 'Hostel'}`
     document.querySelector('.contacts-title').innerHTML = `${languageVariable == 1? 'Ne găsești la': languageVariable == 2? 'Найди нас в' : 'Find us at'}`
-    document.querySelector('.contacts p').innerHTML = `${languageVariable == 1? 'Strada Chișinăului 22': languageVariable == 2? 'Улица Кишинёва 22' : 'Chișinău Street 22'}`
+    document.querySelector('.contacts p').innerHTML = `${languageVariable == 1? 'Strada Chișinăului 22, Anenii Noi': languageVariable == 2? 'Улица Кишинёва 22, Новые Анены' : 'Chișinău Street 22 Anenii Noi'}`
     document.querySelector('#despretxt2').innerHTML = `${languageVariable == 1? 'Bine ați venit la Hostel, aflat la doar câțiva pași de Restaurantul Mosteria, oferim cazare primitoare, cu camere confortabile și o atmosferă caldă, perfectă pentru odihnă și relaxare. Dacă ai nevoie de un loc peste noapte sau dacă călătorești prin zonă, hostelul nostru este alegerea ideală!': languageVariable == 2? 'Добро пожаловать в наш хостел, расположенный всего в нескольких шагах от ресторана Мостерия! Мы предлагаем уютное размещение с комфортабельными номерами и теплой атмосферой, идеально подходящей для отдыха и релакса. Если вам нужно место для ночлега или вы путешествуете по окрестностям, наш хостел — идеальный выбор!' : 'Welcome to our hostel, located just a few steps from Mosteria Restaurant! We offer cozy accommodation with comfortable rooms and a warm atmosphere, perfect for rest and relaxation. Whether you need a place for the night or are traveling through the area, our hostel is the ideal choice!'}`;
     document.querySelector('#despretxt').innerHTML = `${languageVariable == 1? 'Bine ați venit la Restaurantul Mosteria, un colț al Italiei ascuns în inima Anenilor Noi! Aici, savoarea bucătăriei italiene prinde viață în fiecare farfurie, iar vinurile atent selecționate completează perfect o experiență culinară de neuitat. Vă invităm să vă bucurați de arome autentice, ospitalitate caldă și un strop de dolce vita, chiar la noi acasă!' : languageVariable == 2? 'Добро пожаловать в ресторан Mosteria, уголок Италии, спрятанный в самом сердце Анений Ной! Здесь вкус итальянской кухни оживает в каждом блюде, а тщательно подобранные вина идеально дополняют незабываемое кулинарное путешествие. Приглашаем насладиться аутентичными ароматами, теплым гостеприимством и частичкой dolce vita прямо у нас!' : 'Welcome to Mosteria Restaurant, a slice of Italy tucked away in the heart of Anenii Noi! Here, the flavors of Italian cuisine come to life in every dish, and carefully selected wines perfectly complement an unforgettable culinary experience. We invite you to savor authentic aromas, warm hospitality, and a touch of dolce vita, right at our home!'}`;
     document.querySelector('.credentials p').innerHTML = `${languageVariable == 1? 'Creat de F. Daniel' : languageVariable ==2? 'Сделано F. Daniel' : 'Made by F. Daniel'}`
@@ -260,36 +269,43 @@ middle.addEventListener('click', () => {
 });*/
 
 function renderMenu() {
-    document.querySelectorAll('.h1').forEach(h1 => h1.innerHTML = `${languageVariable == 1 ? 'Aperitive' : languageVariable == 2 ? 'Аппетитки' : 'Appetizers'}`);
+    document.querySelectorAll('.h1').forEach(h1 => h1.innerHTML = `${languageVariable == 1 ? 'Gustări' : languageVariable == 2 ? 'Закуски' : 'Starters'}`);
 document.querySelectorAll('.h2').forEach(h2 => h2.innerHTML = `${languageVariable == 1 ? 'Supe' : languageVariable == 2 ? 'Супы' : 'Soups'}`);
-document.querySelectorAll('.h3').forEach(h3 => h3.innerHTML = `${languageVariable == 1 ? 'Suplemente' : languageVariable == 2 ? 'Добавки' : 'Supplements'}`);
-document.querySelectorAll('.h4').forEach(h4 => h4.innerHTML = `${languageVariable == 1 ? 'Pizza' : languageVariable == 2 ? 'Пицца' : 'Pizza'}`);
+document.querySelectorAll('.h3').forEach(h3 => h3.innerHTML = `${languageVariable == 1 ? 'Pizza' : languageVariable == 2 ? 'Пицца' : 'Pizza'}`);
+document.querySelectorAll('.h4').forEach(h4 => h4.innerHTML = `${languageVariable == 1 ? 'Bucate' : languageVariable == 2 ? 'Блюда' : 'Dishes'}`);
 document.querySelectorAll('.h5').forEach(h5 => h5.innerHTML = `${languageVariable == 1 ? 'Burgeri' : languageVariable == 2 ? 'Бургеры' : 'Burgers'}`);
-document.querySelectorAll('.h6').forEach(h6 => h6.innerHTML = `${languageVariable == 1 ? 'Desert' : languageVariable == 2 ? 'Десерты' : 'Desserts'}`);
-document.querySelectorAll('.h7').forEach(h7 => h7.innerHTML = `${languageVariable == 1 ? 'Bucate' : languageVariable == 2 ? 'Блюда' : 'Dishes'}`);
-document.querySelectorAll('.h8').forEach(h8 => h8.innerHTML = `${languageVariable == 1 ? 'Băuturi' : languageVariable == 2 ? 'Напитки' : 'Drinks'}`);
-    document.querySelector('.c1').innerHTML = `${languageVariable == 1 ? 'Aperitive' : languageVariable == 2 ? 'Аппетитки' : 'Appetizers'}`;
-    document.querySelector('.c2').innerHTML = `${languageVariable == 1 ? 'Supe' : languageVariable == 2 ? 'Супы' : 'Soups'}`;
-    document.querySelector('.c3').innerHTML = `${languageVariable == 1 ? 'Suplemente' : languageVariable == 2 ? 'Добавки' : 'Supplements'}`;
-    document.querySelector('.c4').innerHTML = `${languageVariable == 1 ? 'Pizza' : languageVariable == 2 ? 'Пицца' : 'Pizza'}`;
-    document.querySelector('.c5').innerHTML = `${languageVariable == 1 ? 'Burgeri' : languageVariable == 2 ? 'Бургеры' : 'Burgers'}`;
-    document.querySelector('.c6').innerHTML = `${languageVariable == 1 ? 'Desert' : languageVariable == 2 ? 'Десерты' : 'Desserts'}`;
-    document.querySelector('.c7').innerHTML = `${languageVariable == 1 ? 'Bucate' : languageVariable == 2 ? 'Блюда' : 'Dishes'}`;
-    document.querySelector('.c8').innerHTML = `${languageVariable == 1 ? 'Băuturi' : languageVariable == 2 ? 'Напитки' : 'Drinks'}`;
-    document.querySelector('.c9').innerHTML = `${languageVariable == 1 ? 'Alcool' : languageVariable == 2 ? 'Aлкоголь' : 'Alcohol'}`;
+document.querySelectorAll('.h6').forEach(h6 => h6.innerHTML = `${languageVariable == 1 ? 'Plato' : languageVariable == 2 ? 'Плато' : 'Plateau'}`);
+document.querySelectorAll('.h7').forEach(h7 => h7.innerHTML = `${languageVariable == 1 ? 'Desert' : languageVariable == 2 ? 'Десерты' : 'Desserts'}`);
+document.querySelectorAll('.h8').forEach(h8 => h8.innerHTML = `${languageVariable == 1 ? 'Băuturi calde' : languageVariable == 2 ? 'Горячие напитки' : 'Hot drinks'}`);
+document.querySelectorAll('.h9').forEach(h9 => h9.innerHTML = `${languageVariable == 1 ? 'Băuturi reci' : languageVariable == 2 ? 'Холодные напитки' : 'Cold drinks'}`);
+document.querySelectorAll('.h10').forEach(h10 => h10.innerHTML = `${languageVariable == 1 ? 'Alcool' : languageVariable == 2 ? 'Aлкоголь' : 'Alcool'}`);
+document.querySelectorAll('.h11').forEach(h11 => h11.innerHTML = `${languageVariable == 1 ? 'Bere' : languageVariable == 2 ? 'Пиво' : 'Beer'}`);
+document.querySelectorAll('.h12').forEach(h12 => h12.innerHTML = `${languageVariable == 1 ? 'Vinuri' : languageVariable == 2 ? 'Вино' : 'Wines'}`);
+    document.querySelector('.c1').innerHTML = `${languageVariable == 1 ? 'Gustări' : languageVariable == 2 ? 'Закуски' : 'Starters'}`;
+document.querySelector('.c2').innerHTML = `${languageVariable == 1 ? 'Supe' : languageVariable == 2 ? 'Супы' : 'Soups'}`;
+document.querySelector('.c3').innerHTML = `${languageVariable == 1 ? 'Pizza' : languageVariable == 2 ? 'Пицца' : 'Pizza'}`;
+document.querySelector('.c4').innerHTML = `${languageVariable == 1 ? 'Bucate' : languageVariable == 2 ? 'Блюда' : 'Dishes'}`;
+document.querySelector('.c5').innerHTML = `${languageVariable == 1 ? 'Burgeri' : languageVariable == 2 ? 'Бургеры' : 'Burgers'}`;
+document.querySelector('.c6').innerHTML = `${languageVariable == 1 ? 'Plato' : languageVariable == 2 ? 'Плато' : 'Plateau'}`;
+document.querySelector('.c7').innerHTML = `${languageVariable == 1 ? 'Desert' : languageVariable == 2 ? 'Десерты' : 'Desserts'}`;
+document.querySelector('.c8').innerHTML = `${languageVariable == 1 ? 'Băuturi calde' : languageVariable == 2 ? 'Горячие напитки' : 'Hot drinks'}`;
+document.querySelector('.c9').innerHTML = `${languageVariable == 1 ? 'Băuturi reci' : languageVariable == 2 ? 'Холодные напитки' : 'Cold drinks'}`;
+document.querySelector('.c10').innerHTML = `${languageVariable == 1 ? 'Alcool' : languageVariable == 2 ? 'Aлкоголь' : 'Alcool'}`;
+document.querySelector('.c11').innerHTML = `${languageVariable == 1 ? 'Bere' : languageVariable == 2 ? 'Пиво' : 'Beer'}`;
+document.querySelector('.c12').innerHTML = `${languageVariable == 1 ? 'Vinuri' : languageVariable == 2 ? 'Вино' : 'Wines'}`;
 
     document.querySelector('.menuc1').innerHTML = '';
-    aperitive.forEach(aperitiv => {
+    gustari.forEach(gustare => {
         document.querySelector('.menuc1').innerHTML +=
             `<div class="box">
                         <div class="upperdeck">
-                        <img src="assets/images/menu/${aperitiv.id}.jpg" class="imagebox">
+                        <img src="assets/images/menu/${gustare.id}.jpg" class="imagebox">
                         <div class="pricebox">
-                            <p class="quantity">${aperitiv.gramaj} ${languageVariable == 2 ? 'г' : 'g'}</p>
-                            <p class="price">${aperitiv.pret} MDL</p>
+                            <p class="quantity">${gustare.gramaj} ${languageVariable == 2 ? 'г' : 'g'}</p>
+                            <p class="price">${gustare.pret} MDL</p>
                         </div></div>
-                        <h2 class="productName"> ${languageVariable == 1 ? aperitiv.nume : languageVariable == 2 ? aperitiv.numerus : aperitiv.numeeng}</h2>
-                        <p class="productDescription">${languageVariable == 1 ? aperitiv.descriere : languageVariable == 2 ? aperitiv.descriererus : aperitiv.descriereeng}</p>
+                        <h2 class="productName"> ${languageVariable == 1 ? gustare.nume : languageVariable == 2 ? gustare.numerus : gustare.numeeng}</h2>
+                        <p class="productDescription">${languageVariable == 1 ? gustare.descriere : languageVariable == 2 ? gustare.descriererus : gustare.descriereeng}</p>
             </div>`
     });
     document.querySelector('.menuc2').innerHTML = '';
@@ -307,50 +323,65 @@ document.querySelectorAll('.h8').forEach(h8 => h8.innerHTML = `${languageVariabl
             </div>`
     });
     document.querySelector('.menuc3').innerHTML = '';
-    suplemente.forEach(supliment => {
+    pizza.forEach(piza => {
         document.querySelector('.menuc3').innerHTML +=
             `<div class="box">
                     <div class="upperdeck">
-                    <img src="assets/images/menu/${supliment.id}.jpg" class="imagebox">
-                    <div class="pricebox">
-                        <p class="quantity">${supliment.gramaj} ${languageVariable == 2 ? 'г' : 'g'}</p>
-                        <p class="price">${supliment.pret} MDL</p>
-                    </div></div>
-                    <h2 class="productName"> ${languageVariable == 1 ? supliment.nume : languageVariable == 2 ? supliment.numerus : supliment.numeeng}</h2>
-                    <p class="productDescription">${languageVariable == 1 ? supliment.descriere : languageVariable == 2 ? supliment.descriererus : supliment.descriereeng}</p>
-        </div>`
-    });
-    document.querySelector('.menuc4').innerHTML = '';
-    pizza.forEach(piza => {
-    document.querySelector('.menuc4').innerHTML +=
-     `<div class="box">
-                    <div class="upperdeck">
                     <img src="assets/images/menu/${piza.id}.jpg" class="imagebox">
                     <div class="pricebox">
-                        <p class="quantity">${piza.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
+                        <p class="quantity">${piza.gramaj} ${languageVariable == 2 ? 'г' : 'g'}</p>
                         <p class="price">${piza.pret} MDL</p>
                     </div></div>
                     <h2 class="productName"> ${languageVariable == 1 ? piza.nume : languageVariable == 2 ? piza.numerus : piza.numeeng}</h2>
                     <p class="productDescription">${languageVariable == 1 ? piza.descriere : languageVariable == 2 ? piza.descriererus : piza.descriereeng}</p>
         </div>`
+    });
+    document.querySelector('.menuc4').innerHTML = '';
+bucate.forEach(bucata => {
+    document.querySelector('.menuc4').innerHTML +=
+     `<div class="box">
+                    <div class="upperdeck">
+                    <img src="assets/images/menu/${bucata.id}.jpg" class="imagebox">
+                    <div class="pricebox">
+                        <p class="quantity">${bucata.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
+                        <p class="price">${bucata.pret} MDL</p>
+                    </div></div>
+                    <h2 class="productName"> ${languageVariable == 1 ? bucata.nume : languageVariable == 2 ? bucata.numerus : bucata.numeeng}</h2>
+                    <p class="productDescription">${languageVariable == 1 ? bucata.descriere : languageVariable == 2 ? bucata.descriererus : bucata.descriereeng}</p>
+        </div>`
 });
 document.querySelector('.menuc5').innerHTML = '';
-burger.forEach(burg => {
+burgere.forEach(burger => {
     document.querySelector('.menuc5').innerHTML +=
      `<div class="box">
                     <div class="upperdeck">
-                    <img src="assets/images/menu/${burg.id}.jpg" class="imagebox">
+                    <img src="assets/images/menu/${burger.id}.jpg" class="imagebox">
                     <div class="pricebox">
-                        <p class="quantity">${burg.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
-                        <p class="price">${burg.pret} MDL</p>
+                        <p class="quantity">${burger.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
+                        <p class="price">${burger.pret} MDL</p>
                     </div></div>
-                    <h2 class="productName"> ${languageVariable == 1 ? burg.nume : languageVariable == 2 ? burg.numerus : burg.numeeng}</h2>
-                    <p class="productDescription">${languageVariable == 1 ? burg.descriere : languageVariable == 2 ? burg.descriererus : burg.descriereeng}</p>
+                    <h2 class="productName"> ${languageVariable == 1 ? burger.nume : languageVariable == 2 ? burger.numerus : burger.numeeng}</h2>
+                    <p class="productDescription">${languageVariable == 1 ? burger.descriere : languageVariable == 2 ? burger.descriererus : burger.descriereeng}</p>
         </div>`
 });
 document.querySelector('.menuc6').innerHTML = '';
-desert.forEach(des => {
+plato.forEach(plat => {
     document.querySelector('.menuc6').innerHTML +=
+     `<div class="box">
+                    <div class="upperdeck">
+                    <img src="assets/images/menu/${plat.id}.jpg" class="imagebox">
+                    <div class="pricebox">
+                        <p class="quantity">${plat.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
+                        <p class="price">${plat.pret} MDL</p>
+                    </div></div>
+                    <h2 class="productName"> ${languageVariable == 1 ? plat.nume : languageVariable == 2 ? plat.numerus : plat.numeeng}</h2>
+                    <p class="productDescription">${languageVariable == 1 ? plat.descriere : languageVariable == 2 ? plat.descriererus : plat.descriereeng}</p>
+        </div>`
+});
+
+document.querySelector('.menuc7').innerHTML = '';
+desert.forEach(des => {
+    document.querySelector('.menuc7').innerHTML +=
      `<div class="box">
                     <div class="upperdeck">
                     <img src="assets/images/menu/${des.id}.jpg" class="imagebox">
@@ -359,50 +390,77 @@ desert.forEach(des => {
                         <p class="price">${des.pret} MDL</p>
                     </div></div>
                     <h2 class="productName"> ${languageVariable == 1 ? des.nume : languageVariable == 2 ? des.numerus : des.numeeng}</h2>
-                    <p class="productDescription">${languageVariable == 1 ? des.descriere : languageVariable == 2 ? des.descriererus : des.descriereeng}</p>
-        </div>`
-});
-
-document.querySelector('.menuc7').innerHTML = '';
-carne.forEach(carn => {
-    document.querySelector('.menuc7').innerHTML +=
-     `<div class="box">
-                    <div class="upperdeck">
-                    <img src="assets/images/menu/${carn.id}.jpg" class="imagebox">
-                    <div class="pricebox">
-                        <p class="quantity">${carn.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
-                        <p class="price">${carn.pret} MDL</p>
-                    </div></div>
-                    <h2 class="productName"> ${languageVariable == 1 ? carn.nume : languageVariable == 2 ? carn.numerus : carn.numeeng}</h2>
-                    <p class="productDescription">${languageVariable == 1 ? carn.descriere : languageVariable == 2 ? carn.descriererus : carn.descriereeng}</p>
+                    <p class="productDescription"></p>
         </div>`
 });
 document.querySelector('.menuc8').innerHTML = '';
-bauturi.forEach(bautura => {
+calde.forEach(cald => {
     document.querySelector('.menuc8').innerHTML +=
+     `<div class="box">
+                    <div class="upperdeck">
+                    <img src="assets/images/menu/${cald.id}.jpg" class="imagebox">
+                    <div class="pricebox">
+                        <p class="quantity">${cald.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
+                        <p class="price">${cald.pret} MDL</p>
+                    </div></div>
+                    <h2 class="productName"> ${languageVariable == 1 ? cald.nume : languageVariable == 2 ? cald.numerus : cald.numeeng}</h2>
+                    <p class="productDescription"></p>
+        </div>`
+});
+document.querySelector('.menuc9').innerHTML = '';
+bauturi.forEach(bautura => {
+    document.querySelector('.menuc9').innerHTML +=
      `<div class="box">
                     <div class="upperdeck">
                     <img src="assets/images/menu/${bautura.id}.jpg" class="imagebox">
                     <div class="pricebox">
-                        <p class="quantity">${bautura.gramaj} ${languageVariable == 2 ? 'мл': 'ml' }</p>
+                        <p class="quantity">${bautura.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
                         <p class="price">${bautura.pret} MDL</p>
                     </div></div>
                     <h2 class="productName"> ${languageVariable == 1 ? bautura.nume : languageVariable == 2 ? bautura.numerus : bautura.numeeng}</h2>
-                    <p class="productDescription">${languageVariable == 1 ? bautura.descriere : languageVariable == 2 ? bautura.descriererus : bautura.descriereeng}</p>
+                    <p class="productDescription"></p>
         </div>`
 });
-document.querySelector('.menuc9').innerHTML = '';
+document.querySelector('.menuc10').innerHTML = '';
 alcool.forEach(alc => {
-    document.querySelector('.menuc9').innerHTML +=
+    document.querySelector('.menuc10').innerHTML +=
      `<div class="box">
                     <div class="upperdeck">
                     <img src="assets/images/menu/${alc.id}.jpg" class="imagebox">
                     <div class="pricebox">
-                        <p class="quantity">${alc.gramaj} ${languageVariable == 2 ? 'мл': 'ml' }</p>
+                        <p class="quantity">${alc.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
                         <p class="price">${alc.pret} MDL</p>
                     </div></div>
                     <h2 class="productName"> ${languageVariable == 1 ? alc.nume : languageVariable == 2 ? alc.numerus : alc.numeeng}</h2>
-                    <p class="productDescription">${languageVariable == 1 ? alc.descriere : languageVariable == 2 ? alc.descriererus : alc.descriereeng}</p>
+                    <p class="productDescription"></p>
+        </div>`
+});
+document.querySelector('.menuc11').innerHTML = '';
+bere.forEach(una => {
+    document.querySelector('.menuc11').innerHTML +=
+     `<div class="box">
+                    <div class="upperdeck">
+                    <img src="assets/images/menu/${una.id}.jpg" class="imagebox">
+                    <div class="pricebox">
+                        <p class="quantity">${una.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
+                        <p class="price">${una.pret} MDL</p>
+                    </div></div>
+                    <h2 class="productName"> ${languageVariable == 1 ? una.nume : languageVariable == 2 ? una.numerus : una.numeeng}</h2>
+                    <p class="productDescription">${languageVariable == 1 ? una.descriere : languageVariable == 2 ? una.descriererus : una.descriereeng}</p>
+        </div>`
+});
+document.querySelector('.menuc12').innerHTML = '';
+vin.forEach(unvin => {
+    document.querySelector('.menuc12').innerHTML +=
+     `<div class="box">
+                    <div class="upperdeck">
+                    <img src="assets/images/menu/${unvin.id}.jpg" class="imagebox">
+                    <div class="pricebox">
+                        <p class="quantity">${unvin.gramaj} ${languageVariable == 2 ? 'г': 'g' }</p>
+                        <p class="price">${unvin.pret} MDL</p>
+                    </div></div>
+                    <h2 class="productName"> ${languageVariable == 1 ? unvin.nume : languageVariable == 2 ? unvin.numerus : unvin.numeeng}</h2>
+                    <p class="productDescription">${languageVariable == 1 ? unvin.descriere : languageVariable == 2 ? unvin.descriererus : unvin.descriereeng}</p>
         </div>`
 });
 }
