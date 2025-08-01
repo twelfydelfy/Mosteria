@@ -527,7 +527,7 @@ export const burgere = [
 ]
 export const plato = [
     {
-        id: 1102,
+        id: 1101,
         nume: 'Classic pane',
         numeeng: 'Classic wedges',
         numerus: 'Классические клинья',
@@ -538,7 +538,7 @@ export const plato = [
         descriererus: 'крылышки, деревенские, наггетсы, сыр, луковые кольца, соус'
     },
     {
-        id: 1101,
+        id: 1102,
         nume: 'Fructe de mare pane',
         numeeng: 'Fried seafood',
         numerus: 'Жареные морепродукты',
