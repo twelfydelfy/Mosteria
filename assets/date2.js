@@ -424,7 +424,7 @@ export const bucate = [
         descriererus: "Курица, пита, картофель, красный лук, огурец, помидор, соус"
     },
     {
-        id: 1,
+        id: 717,
         nume: "Piept de rață",
         numeeng: "Duck breast",
         numerus: "Утиная грудка",
