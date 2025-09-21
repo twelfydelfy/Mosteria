@@ -216,6 +216,58 @@
     cursor: pointer;
     transform: scale(1.1);
 }
+@media (max-width: 1460px){
+    .menuc1,
+.menuc2,
+.menuc3,
+.menuc4,
+.menuc5,
+.menuc6,
+.menuc7,
+.menuc8,
+.menuc9,
+.menuc10,
+.menuc11,
+.menuc12
+{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+}
+@media (max-width: 1134px){
+       .menuc1,
+.menuc2,
+.menuc3,
+.menuc4,
+.menuc5,
+.menuc6,
+.menuc7,
+.menuc8,
+.menuc9,
+.menuc10,
+.menuc11,
+.menuc12
+{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+} 
+@media (max-width: 875px){
+       .menuc1,
+.menuc2,
+.menuc3,
+.menuc4,
+.menuc5,
+.menuc6,
+.menuc7,
+.menuc8,
+.menuc9,
+.menuc10,
+.menuc11,
+.menuc12
+{
+    grid-template-columns: 1fr 1fr;
+}
+} 
+
 
 @media (max-width: 768px) {
     .despre {
