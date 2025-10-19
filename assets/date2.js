@@ -76,7 +76,7 @@ export const gustari = [
         descriereeng: "",
     },
     {
-        id: 1,
+        id: 122,
         nume: 'Rustic cips',
         numeeng: 'Rustic chips',
         numerus: 'Деревенские чипсы',
